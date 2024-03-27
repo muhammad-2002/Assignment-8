@@ -9,7 +9,9 @@ const MainLayout = () => {
         <div className="h-16">
           <Navbar></Navbar>
         </div>
-        <Outlet></Outlet>
+        <div className="w-[85%] mx-auto">
+          <Outlet></Outlet>
+        </div>
       </div>
 
       <Footer></Footer>
