@@ -17,6 +17,19 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#23be0a] font-bold text-sm border border-solid border-[#23be0a] px-3 py-2 rounded-md"
+              : "font-bold text-sm"
+          }
+        >
+          {" "}
+          About Us
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
           to="/listed-book"
           className={({ isActive }) =>
             isActive
@@ -40,13 +53,26 @@ const Navbar = () => {
           Pages to Read
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/contact-us"
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#23be0a] font-bold text-sm border border-solid border-[#23be0a] px-3 py-2 rounded-md"
+              : "font-bold text-sm"
+          }
+        >
+          {" "}
+          Contact Us
+        </NavLink>
+      </li>
     </>
   );
 
   return (
-    <div className="navbar bg-base-100 font-work-sans fixed z-10 px-16 shadow-md mx-auto">
+    <div className="navbar bg-base-100 font-work-sans fixed z-10 px-3 md:px-16 shadow-md mx-auto">
       <div className="navbar-start ">
-        {/* <div className="dropdown">
+        <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +95,7 @@ const Navbar = () => {
           >
             {Links}
           </ul>
-        </div> */}
+        </div>
         <a className="cursor-pointer text-2xl font-bold">Book Vibe</a>
       </div>
       <div className="navbar-center hidden lg:flex ">

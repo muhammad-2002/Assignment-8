@@ -9,7 +9,7 @@ const MainLayout = () => {
         <div className="h-16">
           <Navbar></Navbar>
         </div>
-        <div className="w-[85%] mx-auto">
+        <div className=" w-[95%] md:w-[85%] mx-auto">
           <Outlet></Outlet>
         </div>
       </div>

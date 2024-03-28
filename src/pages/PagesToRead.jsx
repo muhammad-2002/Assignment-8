@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
+import { useEffect, useState } from "react";
 import {
   Bar,
   BarChart,
@@ -9,10 +11,10 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import NoDataAvailable from "../components/NoDataAvailable";
 import { getIntoLocal } from "../utilities/ManageLocalStorage";
 
 const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
-const data = getIntoLocal("read");
 
 const getPath = (x, y, width, height) => {
   return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${
@@ -45,33 +47,42 @@ function CustomTooltip({ payload, label, active }) {
 }
 
 export default function App() {
-  return (
-    <BarChart
-      width={1100}
-      height={400}
-      data={data}
-      margin={{
-        top: 30,
-        right: 30,
-        left: 20,
-        bottom: 5,
-      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="bookName" />
-      <YAxis />
-      <Tooltip content={<CustomTooltip />} />
-      <Bar
-        dataKey="totalPages"
-        fill="#8884d8"
-        shape={<TriangleBar />}
-        label={{ position: "top" }}
+  const data = getIntoLocal("read");
+  const [localData, setLocalData] = useState([]);
+  useEffect(() => {
+    setLocalData(data);
+  }, []);
+  if (localData.length < 1) {
+    return <NoDataAvailable></NoDataAvailable>;
+  } else {
+    return (
+      <BarChart
+        width={1100}
+        height={400}
+        data={data}
+        margin={{
+          top: 30,
+          right: 30,
+          left: 20,
+          bottom: 5,
+        }}
       >
-        {data.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={colors[index % 20]} />
-        ))}
-      </Bar>
-      <Legend />
-    </BarChart>
-  );
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="bookName" />
+        <YAxis />
+        <Tooltip content={<CustomTooltip />} />
+        <Bar
+          dataKey="totalPages"
+          fill="#8884d8"
+          shape={<TriangleBar />}
+          label={{ position: "top" }}
+        >
+          {data.map((entry, index) => (
+            <Cell key={index} fill={colors[index % 20]} />
+          ))}
+        </Bar>
+        <Legend />
+      </BarChart>
+    );
+  }
 }
