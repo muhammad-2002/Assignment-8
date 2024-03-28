@@ -18,9 +18,11 @@ const Book = ({ book }) => {
           <p className="space-x-4 text-[#23BE0A] font-bold">
             {tags.map((tag) => ` #${tag}`)}
           </p>
-          <h2 className="card-title font-playfair text-2xl ">{bookName}</h2>
+          <h2 className="card-title font-playfair text-2xl h-14  ">
+            {bookName}
+          </h2>
           <p className="text-[18px] font-semibold">By:{author}</p>
-          <div className="flex justify-between items-center  text-bold">
+          <div className="flex justify-between items-center   text-bold">
             <p>{category}</p>
             <div>
               <p className="">

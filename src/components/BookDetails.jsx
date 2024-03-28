@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import {
   setDataIntoWishList,
   setIntoLocal,
@@ -6,7 +6,6 @@ import {
 
 const BookDetails = () => {
   const books = useLoaderData();
-  console.log(books);
 
   const { id } = useParams();
 
@@ -94,6 +93,12 @@ const BookDetails = () => {
             >
               Wishlist
             </a>
+            <Link
+              to="/"
+              className="px-8 py-3 text-lg font-semibold rounded bg-purple-500 cursor-pointer dark:text-gray-50"
+            >
+              Go Back
+            </Link>
           </div>
         </div>
       </div>
