@@ -33,15 +33,15 @@ const BookDetails = () => {
   };
   return (
     <section className=" w-full mx-auto ">
-      <div className="container flex flex-col items-start justify-center p-6 mx-auto sm:py-12 lg:py-16 lg:flex-row lg:justify-between">
-        <div className="dark:bg-gray-100 dark:text-gray-800 flex items-center justify-center  mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 w-1/2 rounded-lg">
+      <div className=" container flex flex-col w-full border-purple-400 border-solid items-start justify-center p-6 mx-auto sm:py-12 lg:py-16 lg:flex-row lg:justify-between">
+        <div className="dark:bg-gray-100 dark:text-gray-800 flex items-center justify-center  mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 w-full lg:w-1/2 rounded-lg">
           <img
             src={image}
             alt=""
             className="object-contain p-5  h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
           />
         </div>
-        <div className="flex flex-col justify-center pt-0 p-3 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left items-start w-[45%] space-y-2">
+        <div className="flex flex-col justify-center pt-0 p-3 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left items-start w-full lg:w-[45%] space-y-2">
           <h1 className="text-2xl  font-bold leading-none sm:text-2xl">
             {bookName}
           </h1>
@@ -63,11 +63,11 @@ const BookDetails = () => {
 
           <hr className="border-dashed border-gray-500 border-1 w-full"></hr>
           <div className="w-[60%]">
-            <div className="flex justify-between items-center ">
+            <div className="flex justify-start items-center   ">
               <p className=" ">Number Of Pages:</p>
               <p className="font-bold">{totalPages}</p>
             </div>
-            <div className="flex justify-between items-center ">
+            <div className="flex justify-between  items-center ">
               <p className=" ">Publisher:</p>
               <p className="font-bold">{publisher}</p>
             </div>
@@ -80,10 +80,10 @@ const BookDetails = () => {
               <p className="font-bold">{rating}</p>
             </div>
           </div>
-          <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
+          <div className="flex flex-col  space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start w-full">
             <a
               onClick={() => handleRead(booksId)}
-              className="px-8 py-3 text-lg font-semibold border rounded cursor-pointer dark:border-gray-800 hover:bg-[#23be0a] hover:text-white hover:border-white"
+              className="  px-8 py-3 text-lg font-semibold border rounded cursor-pointer dark:border-gray-800 hover:bg-[#23be0a] hover:text-white hover:border-white"
             >
               Read
             </a>
