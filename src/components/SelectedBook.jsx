@@ -19,12 +19,12 @@ const SelectedBook = ({ book }) => {
   } = book;
 
   return (
-    <div className="flex flex-col divide-y dark:divide-gray-300 w-full rounded-lg my-6 pl-6  border">
-      <div className="flex flex-col py-6 sm:flex-row sm:justify-between">
+    <div className="flex flex-col divide-y dark:divide-gray-300 w-full rounded-lg my-6 p-1 md:pl-6  border">
+      <div className="flex flex-col py-1 md:py-6 sm:flex-row sm:justify-between">
         <div className="flex w-full md:flex-row flex-col justify-between space-x-2 gap-6 sm:space-x-4">
           <div className="object-cover flex justify-center items-center rounded-lg   dark:bg-gray-200 border">
             <img
-              className=" p-6  dark:border-rounded outline-none h-[250px] w-[300px]   "
+              className=" p-6  dark:border-rounded outline-none h-[250px] w-[250px] md:w-[300px]   "
               src={image}
               alt="Polaroid camera"
             />
