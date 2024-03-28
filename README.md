@@ -2,7 +2,7 @@
 
 Welcome to My Awesome  Book Vibe Website! Here, you'll find an amazing collection of features to explore.
 
-**Live Site URL**: [hero-assignment-8.surge.sh]
+**Live Site URL**: [(https://hero-assignment-8.surge.sh/)]
 
 ## Features:
 - Responsive design for seamless experience across devices.
