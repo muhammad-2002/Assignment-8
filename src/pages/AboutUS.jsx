@@ -1,6 +1,6 @@
 const AboutUs = () => {
   return (
-    <div className="w-full mx-auto p-6 bg-gray-200 rounded-md my-6">
+    <div className="w-full mx-auto p-5 bg-gray-200 rounded-md my-6">
       <h2 className="text-2xl font-bold mb-4 bg-[#23be0a] text-white py-1 2 px-3">
         About Book Vibe
       </h2>
