@@ -6,8 +6,10 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import BookDetails from "./components/BookDetails";
 
+import LoginPage from "./components/LoginPage";
 import NotFound from "./components/NoData";
 import SelectedBooks from "./components/SelectedBooks";
+import SignUpForm from "./components/SingUp";
 import "./index.css";
 import MainLayout from "./Layout/MainLayout";
 import AboutUS from "./pages/AboutUS";
@@ -55,6 +57,14 @@ const router = createBrowserRouter([
         path: "/book-details/:id",
         element: <BookDetails></BookDetails>,
         loader: () => fetch("/DummyData.json"),
+      },
+      {
+        path: "/login",
+        element: <LoginPage></LoginPage>,
+      },
+      {
+        path: "/signUp",
+        element: <SignUpForm></SignUpForm>,
       },
     ],
   },
