@@ -40,3 +40,7 @@ My Awesome Book Vibe Website aims to provide users with an interactive and engag
    ```bash
    git clone https://github.com/your-repo/my-awesome-book-vibe.git
    cd my-awesome-book-vibe
+   
+2.**Install Dependencies:**
+   ```bash
+   npm install
